@@ -1,4 +1,6 @@
 package com.gireesh.jdbc;
+import com.gireesh.jdbc.constants.Constants;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,13 +10,10 @@ import java.sql.SQLException;
 public class OracleJDBCExample {
 
     // JDBC URL, username, and password of Oracle database
-    private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    private static final String USERNAME = "system";
-    private static final String PASSWORD = "XXXX";
 
     // Establishing a connection
     private static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+        return DriverManager.getConnection(Constants.JDBC_URL, Constants.USERNAME, Constants.PASSWORD);
     }
 
     // Insert data into the customer table
